@@ -1,0 +1,4 @@
+- This dir is where the error log txt files get created.
+- The error files get created automatically, if there were any errors occured during the run-time
+- This dir is must to have errors logged !!
+- Thank You !
