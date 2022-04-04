@@ -1,0 +1,7 @@
+No.,Cust_no,str,Not Null,
+Name,Name,str,Not Null,upper
+Order  No.,Order_no,int,Not Null,
+Order Date,Order_date,date,Not Null,
+Item No.,Item_no,str,Not Null,
+Outstanding Quantity,Qnty,int,Null,
+Outstanding Orders,Total,float,Null,
