@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This script does the ETL process on orclpdb database using petl and cx_Oracle.
+This script does the ETL process on Oracle database using petl and cx_Oracle.
 
 Requires 3 arguements {1} source_file {2} mapping_file {3} Target_table
 """
@@ -57,7 +57,6 @@ def case_ch(field_name,case):
     
     # To change the case to either upper or lower
     
-    # global fin_table
     fin_table[field_name]= case
 
 def con_close():
