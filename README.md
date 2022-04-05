@@ -3,8 +3,7 @@ ETL process in Oracle database using a python library 'Petl'
 
 ## About
 This repository is to give an idea of how to do extraction, transformation and loading of a given dataset into an Oracle database table.\
-As it is in the title, it uses 'Petl' package. There are many other packages out there for ETL processes (pandas,etc) but I thought\
-of showing some love to this package.
+As it is in the title, it uses 'Petl' package. There are many other packages out there for ETL processes (pandas,etc) but I thought of showing some love to this package.
 
 ## Files
 - [/logs](https://github.com/IlamaranMagesh/PythonETL-Oracle/tree/master/logs) - This directory is where the error log files be stored
