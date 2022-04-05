@@ -18,7 +18,7 @@ def isOpen(conn_Object):
     # To check if the connecion is still open
     
     try:
-        return conn_Object.pin() is None
+        return conn_Object.ping() is None
     except:
         return False
 
