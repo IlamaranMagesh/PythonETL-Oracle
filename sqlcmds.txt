@@ -1,16 +1,9 @@
 create table Bill (
-    cust_no varchar2(10),
-    name varchar2(30),
+    cust_no varchar2(10) Not Null,
+    name varchar2(30) Not Null,
     Order_no number(5) primary key,
-    Order_date date,
-    Item_no varchar2(15),
+    Order_date date Not Null,
+    Item_no varchar2(15) Not Null,
     Qnty number(10),
     Total binary_float)
 /
-
-
-
-
-
-
-
