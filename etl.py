@@ -81,6 +81,8 @@ def con_close():
 
 
 try:
+    #Creating Log dir
+    os.makedirs(os.getcwd()+"\logs",exist_ok=True)
     
     #Opening connection and the cursor for SQL execution
     print("Opening Connection...")
