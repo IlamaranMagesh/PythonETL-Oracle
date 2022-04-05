@@ -9,6 +9,7 @@ of showing some love to this package.
 ## Files
 - [/logs](https://github.com/IlamaranMagesh/PythonETL-Oracle/tree/master/logs) - This directory is where the error log files be stored
 - [config.py](https://github.com/IlamaranMagesh/PythonETL-Oracle/blob/master/config.py) - Contains all the required configurations for connecting with the oracle database
+  > Make sure to change configurations before running the program !
 - [etl.py](https://github.com/IlamaranMagesh/PythonETL-Oracle/blob/master/etl.py) - Main file where all the ETL process occurs
   > This program accepts 3 arguments\
   > [1] - source file/dataset (.xlsx)\
