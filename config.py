@@ -3,9 +3,9 @@
 Configurations to connect to Oracle Database
 """
 oracle = {
-        "user": "pdbadmin",
-        "pass": "0920",
-        "host": "localhost/orclpdb",
-        "port": "1521"
+        "user": "[username]",
+        "pass": "[password]",
+        "host": "[host_name/db_name]",
+        "port": "[port_no]"
 }
 
