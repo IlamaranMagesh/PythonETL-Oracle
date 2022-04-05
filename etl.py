@@ -8,6 +8,7 @@ Requires 3 arguements {1} source_file {2} mapping_file {3} Target_table
 import petl
 import cx_Oracle
 import sys
+import os
 import config as cf
 from difflib import SequenceMatcher as sm
 from datetime import datetime,date
