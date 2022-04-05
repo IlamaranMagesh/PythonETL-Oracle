@@ -43,6 +43,9 @@ try:
             
 except Exception as e:
     
+    #Creating Log dir
+    os.makedirs(os.getcwd()+"\logs",exist_ok=True)
+    
     # Logging the errors, if any occurred
     with open('logs\exec_log.txt','a+') as file:
         error="%s %s\n" %(datetime.now(),e)
