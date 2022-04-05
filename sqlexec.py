@@ -4,8 +4,9 @@
 Execute set of SQL commands in oracle database
 """
 
+import os                      # For creating dirs
 import cx_Oracle               # To connect with the Oracle DB
-import config  as cf                # Contians all the credentials to connect
+import config  as cf           # Contians all the credentials to connect
 from datetime import datetime  # To get the time and date for our error-logging
 
 
