@@ -43,5 +43,5 @@ As it is in the title, it uses 'Petl' package. There are many other packages out
 This repo is to show you or give an idea of how 'petl' can be used for etl processes. I have used Oracle as my database and configured as such but you can use other databases as well. You can also change, add mapping definitions and define them to your wish, I have just given some of them. This is same for the source and map file formats but I have used .xlsx and .csv files. Feel free to check and review the codes. If there are any feedbacks, would love to hear them 😄 And let me know if you need to see the more generalized version of this program such that it runs on any databases and have more mapping fucntions than this. 
 
 ``` 
-Thank you, Peace !
+Thank you, Peace and Cheers !
 ```
