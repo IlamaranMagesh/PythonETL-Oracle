@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-This script does the ETL process on Oracle database using petl and cx_Oracle.
+This script does the ETL process on oracle database using petl and cx_Oracle.
 
 Requires 3 arguements {1} source_file {2} mapping_file {3} Target_table
 """
@@ -92,9 +92,10 @@ try:
     cur = conn.cursor()
     
     #Extracting last_row from DB
-    cur.execute("select max(ROWNUM) from %s" %sys.argv[3])
+    db_table = sys.argv[3].upper()
+    cur.execute("select max(ROWNUM) from %s" %db_table)
     last_rnum = cur.fetchone()[0]
-    cur.execute("select * from {0} where ROWID IN(select max(ROWID) from {0})".format(sys.argv[3]))
+    cur.execute("select * from {0} where ROWID IN(select max(ROWID) from {0})".format(db_table))
     last_row = cur.fetchone()
     print("%d rows are present in the database table" %(lambda x: last_rnum if(last_rnum) else 0)(last_rnum))
     print("'%s' is the last row in the database table" %(lambda x: (last_row,) if(last_row) else '')(last_row))
@@ -106,7 +107,7 @@ try:
     #transformation
     hdr_map = []
     for i in map_file:
-        hdr_map.append(i[1].upper())
+        hdr_map.append(i[1].upper()) #creating header using map file
         
     for i in source[0]:
         flag = 0
@@ -125,8 +126,10 @@ try:
         else:
             temp.insert(i,src_records[i]) 
             
-    source = petl.pushheader(temp, hdr_map)
+    source = petl.pushheader(temp, hdr_map) #adding header
     fin_table = petl.convert(source)
+    
+    #transforming by mapping condtions
     for line in map_file:
         field_name = line[1].upper()
         d_type_change(field_name,line[2])
@@ -136,11 +139,13 @@ try:
              
     #Loading
     print("Loading the data...")
-    petl.appenddb(fin_table, cur, sys.argv[3], commit=False)
+    petl.appenddb(fin_table, cur, db_table, commit=False)
     print("Data Loaded...")
+    
     
     #BatchError Handling
     if (cur.getbatcherrors()):
+        
         with open(r"logs\{}_trnslog.txt".format(date.today()),'a+') as file:
             for i in cur.getbatcherrors():
                 error = "%s %s %d \n" %(datetime.now().strftime("[%Y-%m-%d::%H:%M:%S]"),i.message,i.offset+2)
